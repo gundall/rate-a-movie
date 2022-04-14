@@ -38,7 +38,7 @@ const Movie = (props) => {
 					<Title>{title}</Title>
 					{rating &&
 						<Stars
-							rating={3}
+							rating={rating}
 							readOnly={rating}
 							starSize={20}
 						/>

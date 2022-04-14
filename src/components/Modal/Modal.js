@@ -23,8 +23,6 @@ const Modal = (props) => {
 				? DEFAULT_MOVIE_POSTER
 				: `${process.env.REACT_APP_MOVIES_POSTER_BASE_URL}${poster_path}`; // Viene con '/' delante
 
-    console.log(data);
-
     const handleModalClose = (e) => {
         onModalClose();
     }
