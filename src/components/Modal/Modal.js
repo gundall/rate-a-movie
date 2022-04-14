@@ -70,17 +70,17 @@ const Modal = (props) => {
                             </h2>
                             {original_title &&
                                 <div>
-                                    <b>Original Title</b>: <span>{original_title}</span>
+                                    <b>Original Title</b>: <span>{original_title}</span>.
                                 </div>
                             }
                             {release_date &&
                                 <div>
-                                    <b>Release date</b>: <span>{release_date}</span>
+                                    <b>Release date</b>: <span>{release_date}</span>.
                                 </div>
                             }
                             {original_language &&
                                 <div>
-                                    <b>Language</b>: <span>{original_language.toUpperCase()}</span>
+                                    <b>Language</b>: <span>{original_language.toUpperCase()}</span>.
                                 </div>
                             }
                             {overview &&
