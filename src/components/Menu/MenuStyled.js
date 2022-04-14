@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 const NavContainer = styled.nav`
-	justify-content: center;
+	justify-content: flex-start;
 	display: flex;
-	flex: 3;
-	flex-direction: row;
+	flex-direction: column;
 
 	a {
 		align-items: center;
@@ -20,6 +19,12 @@ const NavContainer = styled.nav`
         &:visited {
 			color: initial;
 		}
+	}
+
+	@media screen and (min-width: 477px) {
+		justify-content: center;
+		flex: 3;
+		flex-direction: row;
 	}
 `;
 

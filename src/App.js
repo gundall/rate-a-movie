@@ -1,44 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
-import { Outlet } from "react-router-dom";
-import './App.css';
-
-import Menu from './components/Menu/Menu';
-import SearchInput from './components/SearchInput/SearchInput';
-
 import {
 	getMoviesByTitle,
 	getTopRatedMovies
 } from './redux/moviesSearch';
 import { setLastSearch } from './redux/search';
+import { Outlet } from "react-router-dom";
 
-const AppContainer = styled.div`
-	align-items: stretch;
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	justify-content: flex-start;
-	overflow: hidden;
-`;
-const TopBar = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	box-shadow: #fff 0px 4px 2px 2px;
-`;
+import TopBar from './components/TopBar/TopBar';
+import { AppContainer } from './AppStyled';
 
-const LogoHeader = styled.h1`
-	flex: 1;
-    margin-left: 30px;
-`;
-const Logo = ({ children }) => {
-	return (
-		<LogoHeader>
-			{children}
-		</LogoHeader>
-	);
-};
+const isMobile = window.screen.availWidth <= 476;
 
 function App() {
 	const dispatch = useDispatch();
@@ -72,14 +44,11 @@ function App() {
 	return (
 		<AppContainer>
 			{/* TOPBAR */}
-			<TopBar>
-				<Logo>Rate-a-movie</Logo>
-				<Menu />
-				<SearchInput
-					onSubmit={handleSubmit}
-					onSearch={handleSearch}
-				/>
-			</TopBar>
+			<TopBar
+				onSubmit={handleSubmit}
+				onSearch={handleSearch}
+				mobile={isMobile}
+			/>
 
 			{/* CONTENIDO PROVISTO POR EL ROUTER */}
 			<Outlet />
