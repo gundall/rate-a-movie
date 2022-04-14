@@ -9,7 +9,7 @@ import {
 const MAX_RATING = process.env.REACT_APP_MAX_RATING;
 
 const Stars = (props) => {
-	const { onStarClicked, rating, readOnly } = props;
+	const { onStarClicked, rating, readOnly, starSize } = props;
     const [originalRating, setOriginalRating] = useState(rating);
     const [newRating, setNewRating] = useState(rating);
     const [isReadOnly] = useState(readOnly);
@@ -43,6 +43,7 @@ const Stars = (props) => {
                 onHover={handleStarHovered}
                 onHoverOut={handleStarHoverOut}
                 onClick={handleStarClicked}
+                size={starSize}
                 value={starValue}
 			/>
 		);

@@ -40,6 +40,7 @@ const Movie = (props) => {
 						<Stars
 							rating={3}
 							readOnly={true}
+							starSize={20}
 						/>
 					}
 				</DataContainer>

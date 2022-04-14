@@ -34,11 +34,12 @@ const MainContainer = styled.div`
 	}
 `;
 const DataContainer = styled.div`
-	align-items: stretch;
+	align-items: center;
 	display: flex;
 	flex: 1;
 	flex-direction: column;	
 	justify-content: center;
+	margin-bottom: 10px;
 
 	@media screen and (min-width: 477px) {
 		border-top-left-radius: 10px;

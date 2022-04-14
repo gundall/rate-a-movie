@@ -24,13 +24,13 @@ const Star = styled.span`
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: ${STAR_SIZES.default}px;
+    height: ${props => props.size ? props.size : STAR_SIZES.default}px;
     margin: 0 5px;
-    width: ${STAR_SIZES.default}px;
+    width: ${props => props.size ? props.size : STAR_SIZES.default}px;
 
     @media screen and (min-width: 477px) {
-        height: ${STAR_SIZES.desktop}px;
-        width: ${STAR_SIZES.desktop}px;
+        height: ${props => props.size ? props.size : STAR_SIZES.desktop}px;
+        width: ${props => props.size ? props.size : STAR_SIZES.desktop}px;
     }
 `;
 

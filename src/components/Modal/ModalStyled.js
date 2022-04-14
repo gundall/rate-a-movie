@@ -10,7 +10,7 @@ const HEADER_SIZES = {
 
 const ModalWrapper = styled.div`
     align-items: center;
-    background-color: #fff7;
+    background-color: #bbb5;
     bottom: 0;
     display: flex;
     flex-direction: row;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Star } from './StarStyled';
 
 const StarComponent = (props) => {
-	const {active, onHover, onHoverOut, onClick, value} = props;
+	const {active, onHover, onHoverOut, onClick, size, value} = props;
 
 	const handleStarClick = () => {
 		onClick(value);
@@ -21,6 +21,7 @@ const StarComponent = (props) => {
 			onClick={handleStarClick}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
+			size={size}
 		/>
 	);
 }

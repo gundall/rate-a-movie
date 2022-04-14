@@ -2,17 +2,13 @@ import React, {
     useState
 } from "react";
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+
+import {
+    RatedList
+} from "./MyListStyled";
 
 import Movie from '../components/Movie/Movie';
 import Modal from '../components/Modal/Modal';
-
-const RatedList = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-y: auto;
-`;
 
 const MyList = () => {
     const [modalShown, setModalShown] = useState(false);
