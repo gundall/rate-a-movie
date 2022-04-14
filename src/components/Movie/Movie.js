@@ -36,11 +36,10 @@ const Movie = (props) => {
 				/>
 				<DataContainer>
 					<Title>{title}</Title>
-					{rating &&
+					{true &&
 						<Stars
-							rating={rating}
+							rating={3}
 							readOnly={true}
-							starSize={20}
 						/>
 					}
 				</DataContainer>
