@@ -5,12 +5,12 @@ import closeImg from '../../assets/close.png';
 
 const HEADER_SIZES = {
     default: 40,
-    desktop: 60
+    desktop: 30
 }
 
 const ModalWrapper = styled.div`
     align-items: center;
-    background-color: #bbb5;
+    background-color: #888a;
     bottom: 0;
     display: flex;
     flex-direction: row;
@@ -71,6 +71,7 @@ const ModalContent = styled.div`
     margin-bottom: 15px;
 
     @media screen and (min-width: 477px) {
+        display: flex;
         flex: 1;
     }
 `;
@@ -78,6 +79,7 @@ const ModalLeftContent = styled.div`
     display: flex;
 
     @media screen and (min-width: 477px) {
+        flex: 1;
     }
 `;
 
@@ -102,12 +104,9 @@ const ModalDataList = styled.div`
 const ModalRightContent = styled.div`
     display: flex;
     flex-direction: column;
-    grid-row: 2;
-    grid-column: 1;
 
     @media screen and (min-width: 477px) {
-        grid-column: 1;
-        grid-row: 2;
+        flex: 1;
         justify-content: space-between;
     }
 `;
