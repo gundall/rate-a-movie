@@ -3,9 +3,10 @@ import styled, {
 } from 'styled-components';
 
 // Styled Components.
-const MainWrapper = styled.a`
+const MainWrapper = styled.div`
 	margin: 0 20px;
-	text-decoration: none;
+	height: 100vw;
+	position: relative;
 
 	&:active,
 	&:visited {
@@ -13,15 +14,19 @@ const MainWrapper = styled.a`
 	}
 `;
 const MainContainer = styled.div`
-	border-radius: 10px;
-	box-shadow: #000 0px 0px 18px 2px;
+	border-radius: 3px;
+	bottom: 0;
+	box-shadow: #666 0px 0px 12px 1px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	left: 0;
 	margin: 20px 0;
 	max-width: 100vw;
 	overflow: hidden;
-	position: relative;
+	position: absolute;
+	right: 0;
+	top: 0;
 
 	@media screen and (min-width: 477px) {
 		width: 10vw;
@@ -29,12 +34,15 @@ const MainContainer = styled.div`
 	}
 `;
 const DataContainer = styled.div`
-	text-align: center;
+	align-items: stretch;
+	display: flex;
+	flex: 1;
+	flex-direction: column;	
+	justify-content: center;
 
 	@media screen and (min-width: 477px) {
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		flex: 1;
 		padding: 0 10px;
 	}
 `;
@@ -54,10 +62,13 @@ const Image = styled.div`
 	}
 `;
 const Title = styled.span`
-	font-size: 32px;
+	font-size: 22px;
+	font-weight: 900;
+	margin: 10px;
+	text-align: center;
 
 	@media screen and (min-width: 477px) {
-		font-size: 18px;
+		font-size: 16px;
 	}
 `
 export {

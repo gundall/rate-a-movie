@@ -27,7 +27,6 @@ const Movie = (props) => {
 
 	return (
 		<MainWrapper
-			href="/#" // Previene warning.
 			onClick={handleMovieClick}
 		>
 			<MainContainer>
