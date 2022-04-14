@@ -7,9 +7,8 @@ import {
 	MainWrapper,
     Title
 } from './MovieStyled';
-import Star from '../Star';
+import Stars from '../Stars/Stars';
 
-const MAX_RATING = process.env.REACT_APP_MAX_RATING;
 const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;
 
 const Movie = (props) => {
@@ -19,22 +18,6 @@ const Movie = (props) => {
 			imageUrl = useDefaultImage
 				? DEFAULT_MOVIE_POSTER
 				: `${process.env.REACT_APP_MOVIES_POSTER_BASE_URL}${image}`; // Viene con '/' delante
-	
-	const getStarsFromRating = (rating) => {
-		const stars = [];
-	
-		while (stars.length < MAX_RATING) {
-			const key = Math.floor(Math.random() * 100) + 1 + Date.now();
-			stars.push(
-				<Star
-					active={stars.length < rating}
-					key={key}
-				/>
-			);
-		}
-	
-		return stars;
-	};
 
 	// Handlers.
 	const handleMovieClick = (e) => {
@@ -55,7 +38,11 @@ const Movie = (props) => {
 				<DataContainer>
 					<Title>{title}</Title>
 					{rating &&
-						<div>{getStarsFromRating(rating)}</div>
+						<Stars
+							rating={rating}
+							readOnly={true}
+							starSize={20}
+						/>
 					}
 				</DataContainer>
 			</MainContainer>
