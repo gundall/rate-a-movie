@@ -7,7 +7,10 @@ import './App.css';
 import Menu from './components/Menu/Menu';
 import SearchInput from './components/SearchInput/SearchInput';
 
-import { getMoviesByTitle } from './redux/moviesSearch';
+import {
+	getMoviesByTitle,
+	getTopRatedMovies
+} from './redux/moviesSearch';
 import { setLastSearch } from './redux/search';
 
 const AppContainer = styled.div`
@@ -61,6 +64,9 @@ function App() {
 
 		// Actualizamos la búsuqeda.
 		dispatch(setLastSearch(value));
+
+		// Hacemos la búsqueda por defecto.
+		value === "" && dispatch(getTopRatedMovies());
 	}
 
 	return (
