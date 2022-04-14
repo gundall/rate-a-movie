@@ -12,6 +12,11 @@ const MainWrapper = styled.div`
 	&:visited {
 		color: initial;
 	}
+
+	@media screen and (min-width: 477px) {
+		height: auto;
+		margin: 0;
+	}
 `;
 const MainContainer = styled.div`
 	border-radius: 3px;
@@ -29,8 +34,8 @@ const MainContainer = styled.div`
 	top: 0;
 
 	@media screen and (min-width: 477px) {
-		width: 10vw;
-		height: ${10 * 1.5}vw;
+		width: auto;
+		height: auto;
 	}
 `;
 const DataContainer = styled.div`
