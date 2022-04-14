@@ -25,7 +25,7 @@ const Star = styled.span`
     background-repeat: no-repeat;
     background-size: contain;
     height: ${props => props.size ? props.size : STAR_SIZES.default}px;
-    margin: 0 5px;
+    padding: 0 5px;
     width: ${props => props.size ? props.size : STAR_SIZES.default}px;
 
     @media screen and (min-width: 477px) {
