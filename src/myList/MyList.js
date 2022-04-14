@@ -12,11 +12,11 @@ const RatedList = styled.div`
 `;
 
 const MyList = () => {
-    const movies = useSelector((state) => state.movies.value);
+    const rated = useSelector((state) => state.rated.value);
     return (
         <RatedList>
-            {movies.length > 0
-                ? movies.map((movie) => {
+            {rated.length > 0
+                ? rated.map((movie) => {
                     const   {id, poster_path, title} = movie,
                             salt = Date.now();
                     return (
