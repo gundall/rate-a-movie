@@ -16,6 +16,7 @@ const Movies = () => {
 	const [modalShown, setModalShown] = useState(false);
 	const [modalData, setModalData] = useState({});
 	const [selectedMovie, setSelectedMovie] = useState();
+
 	const movies = useSelector((state) => state.movies.value);
 	const lastSearch = useSelector((state) => state.search.value);
 	const dispatch = useDispatch();

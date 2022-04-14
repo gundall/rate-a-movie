@@ -17,7 +17,7 @@ const MoviesList = (props) => {
 				image={poster_path}
 				key={id + salt}
                 onMovieClick={onMovieClick}
-				rating={rating}
+				// rating={rating}
 				title={title}
 			/>
 		)
