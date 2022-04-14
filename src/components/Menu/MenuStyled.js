@@ -16,7 +16,8 @@ const NavContainer = styled.nav`
 		&:hover {
 			background-color: #eee;
 		}
-		&:active {
+		&:active,
+        &:visited {
 			color: initial;
 		}
 	}
