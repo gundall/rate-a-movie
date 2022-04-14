@@ -4,6 +4,7 @@ import styled, {
 
 // Styled Components.
 const MainWrapper = styled.a`
+	margin: 0 20px;
 	text-decoration: none;
 
 	&:active,
@@ -16,17 +17,34 @@ const MainContainer = styled.div`
 	box-shadow: #000 0px 0px 18px 2px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	margin: 20px 0;
 	max-width: 100vw;
 	overflow: hidden;
 	position: relative;
 
 	@media screen and (min-width: 477px) {
-		max-width: 20vw;
+		width: 10vw;
+		height: ${10 * 1.5}vw;
 	}
 `;
-const DataContainer = styled.div``;
-const Image = styled.img`
+const DataContainer = styled.div`
+	text-align: center;
+
+	@media screen and (min-width: 477px) {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		flex: 1;
+		padding: 0 10px;
+	}
+`;
+const Image = styled.div`
+	background-image: url(${props => props.src});
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex: 5;
+
 	${props =>
 		props.default &&
 			css`
@@ -37,6 +55,10 @@ const Image = styled.img`
 `;
 const Title = styled.span`
 	font-size: 32px;
+
+	@media screen and (min-width: 477px) {
+		font-size: 18px;
+	}
 `
 export {
     DataContainer,

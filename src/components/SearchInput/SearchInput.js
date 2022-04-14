@@ -7,6 +7,7 @@ const SearchContainer = styled.div`
     flex: 1;
     flex-direction: row;
     justify-content: flex-end;
+    margin: 0 30px;
 `;
 const Input = styled.input`
     border-radius: 20px;

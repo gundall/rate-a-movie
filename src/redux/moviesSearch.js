@@ -10,7 +10,7 @@ const getTopRatedMovies = createAsyncThunk(
 );
 
 const getMoviesByTitle = createAsyncThunk(
-	'movies/getTopRatedMovies',
+	'movies/getMoviesByTitle',
 	async (title) => {
 		const response = await moviesApi.getMoviesByTitle(title);
 		return response.results;
@@ -22,18 +22,16 @@ const moviesSearch = createSlice({
 	initialState: {
 		value: [],
 	},
-	reducers: {
-		setMovies: (state, action, thunk) => {
-			state.value = action.payload;
-		}
-	},
+	reducers: {},
 	extraReducers: (builder) => {
 		builder.addCase(getTopRatedMovies.fulfilled, (state, action) => {
+			state.value = action.payload;
+		});
+		builder.addCase(getMoviesByTitle.fulfilled, (state, action) => {
 			state.value = action.payload;
 		});
 	}
 });
 
-export const { setMovies } = moviesSearch.actions; // Regular action creators
 export { getTopRatedMovies, getMoviesByTitle } // Thunks
 export default moviesSearch.reducer;

@@ -5,7 +5,7 @@ import {
 	useSelector,
 	useDispatch
 } from 'react-redux'
-import { getTopRatedMovies/* , getMoviesByTitle  */} from '../redux/moviesSearch';
+import { getTopRatedMovies } from '../redux/moviesSearch';
 import MoviesList from "./MoviesList";
 
 const Movies = () => {
@@ -22,7 +22,6 @@ const Movies = () => {
 	// Cargamos las mejor valoradas para la primera carga.
 	useEffect(() => {
 		dispatch(getTopRatedMovies());
-		// dispatch(getMoviesByTitle('Caillou'));
 	}, []);
 
 	return (
