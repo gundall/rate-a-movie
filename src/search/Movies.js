@@ -17,6 +17,7 @@ const Movies = () => {
 	const [modalData, setModalData] = useState({});
 	const [selectedMovie, setSelectedMovie] = useState();
 	const movies = useSelector((state) => state.movies.value);
+	const lastSearch = useSelector((state) => state.search.value);
 	const dispatch = useDispatch();
 
 	const getMovieFromId = (id) => {
@@ -24,7 +25,7 @@ const Movies = () => {
 		return movie.length > 0 ? movie[0] : null;
 	};
 	const handleMovieClick = (id) => {
-		console.log(`Muestra el modal para la peli: ${id}.`);
+		// Muestra el modal para la peli: ${id}.
 		const movieData = getMovieFromId(id);
 
 		if (movieData !== null) {
@@ -34,12 +35,12 @@ const Movies = () => {
 		}
 	};
 	const handleMovieRated = (rating) => {
-		console.log(`Añade la peli con id ${selectedMovie} a la lista de pelis valoradas.`);
+		// Añade la peli con id ${selectedMovie} a la lista de pelis valoradas.
 		const movieToAdd = getMovieFromId(selectedMovie);
 
 		if (movieToAdd !== null) {
 			const ratedMovie = {
-				... movieToAdd[0],
+				...movieToAdd,
 				rating
 			};
 			dispatch(addRated(ratedMovie));
@@ -51,7 +52,7 @@ const Movies = () => {
 
 	// Cargamos las mejor valoradas para la primera carga.
 	useEffect(() => {
-		dispatch(getTopRatedMovies());
+		lastSearch === "" && dispatch(getTopRatedMovies());
 	}, []);
 
 	return (

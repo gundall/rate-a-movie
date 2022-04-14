@@ -7,11 +7,19 @@ const ratedMovies = createSlice({
 	},
 	reducers: {
 		addRated: (state, action) => {
-			state.value.push(action.payload);
+			let movieIndex;
+			const newRated = action.payload;
+			const inArray = state.value.find((movie, i) => {
+				const found = movie.id === newRated.id;
+				movieIndex = i;
+				return found
+			});
+			!inArray
+				? state.value.push(newRated)
+				: state.value[movieIndex] = newRated
 		}
 	}
 });
 
 export const { addRated } = ratedMovies.actions;
-
 export default ratedMovies.reducer;
