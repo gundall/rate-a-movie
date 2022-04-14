@@ -38,6 +38,7 @@ const Movie = (props) => {
 
 	// Handlers.
 	const handleMovieClick = (e) => {
+		e.preventDefault();
 		onMovieClick(id);
 	};
 
