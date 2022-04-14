@@ -1,22 +1,12 @@
 import React from "react";
-import styled from 'styled-components';
+import {
+	ListContainer
+} from './MoviesListStyled';
 
 import Movie from '../components/Movie/Movie';
 
-const ListContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-
-	@media screen and (min-width: 477px) {
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		overflow-y: auto;
-	}
-`;
-
 const MoviesList = (props) => {
-    const { movies, onMovieClick/* , onMovieRated  */} = props;
+    const { movies, onMovieClick } = props;
 
     const List = movies.map((movie) => {
 		const   {id, poster_path, title} = movie,
