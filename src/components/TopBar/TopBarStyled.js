@@ -24,18 +24,6 @@ const TopBarContainer = styled.div`
     }
 `;
 
-const LogoHeader = styled.h1`
-    &.logo {
-        font-family: Edo;
-    }
-    padding: 0 10px;
-
-    @media screen and (min-width: 477px) {
-	    flex: 1;
-        margin-left: 30px;
-    }
-`;
-
 // MOBILE
 const TopBarMobile = styled.div`
     align-items: center;
@@ -90,7 +78,6 @@ export {
     ToggleMenu,
     MenuMobile,
     MenuMobileWrapper,
-    LogoHeader,
     TopBarContainer,
     TopBarMobile
 }

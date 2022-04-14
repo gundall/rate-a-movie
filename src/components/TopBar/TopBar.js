@@ -2,23 +2,15 @@ import React, {
     useState
 } from "react";
 import {
-    LogoHeader,
     MenuMobile,
     MenuMobileWrapper,
     ToggleMenu,
     TopBarContainer,
     TopBarMobile
 } from './TopBarStyled';
+import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import SearchInput from '../SearchInput/SearchInput';
-
-const Logo = ({ children }) => {
-	return (
-		<LogoHeader className="logo">
-			{children}
-		</LogoHeader>
-	);
-};
 
 const TopBar = (props) => {
     const { logo, mobile, onSubmit, onSearch, search } = props;
@@ -44,7 +36,7 @@ const TopBar = (props) => {
                         >
                             <MenuMobile>
                                 {logo &&
-                                    <Logo>Rate-a-movie</Logo>
+                                    <Logo />
                                 }
                                 <Menu />
                                 {search &&
@@ -63,7 +55,7 @@ const TopBar = (props) => {
     return (
         <TopBarContainer>
             {logo &&
-                <Logo>Rate-a-movie</Logo>
+                <Logo />
             }
             <Menu />
             {search &&
