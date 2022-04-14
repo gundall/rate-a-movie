@@ -77,6 +77,11 @@ const ModalRightContent = styled.div`
     justify-content: space-between;
 `;
 
+const ModalRatingContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 export {
     ModalClose,
     ModalContainer,
@@ -85,6 +90,7 @@ export {
     ModalImage,
     ModalHeader,
     ModalLeftContent,
+    ModalRatingContainer,
     ModalRightContent,
     ModalWrapper
 };

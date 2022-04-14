@@ -7,11 +7,12 @@ import {
     ModalImage,
     ModalHeader,
     ModalLeftContent,
+    ModalRatingContainer,
     ModalRightContent,
     ModalWrapper
 } from './ModalStyled';
+import Stars from '../Stars/Stars';
 
-const MAX_RATING = process.env.REACT_APP_MAX_RATING;
 const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;
 
 const Modal = (props) => {
@@ -32,8 +33,9 @@ const Modal = (props) => {
         /modal-backdrop/.test(target.id)
             && onModalClose();
     }
-    const handleMovieRated = (rating = 3) => {
-        onMovieRated(rating);
+    const handleMovieRated = (rating) => {
+        (rating && rating) > 0
+            && onMovieRated(rating);
     }
 
     return (
@@ -78,7 +80,7 @@ const Modal = (props) => {
                             }
                             {original_language &&
                                 <div>
-                                    <b>Original language</b>: <span>{original_language}</span>
+                                    <b>Language</b>: <span>{original_language}</span>
                                 </div>
                             }
                             {overview &&
@@ -89,9 +91,13 @@ const Modal = (props) => {
                         </ModalDataList>
                     
                         {/* Rating Form */}
-                        <div>
+                        <ModalRatingContainer>
                             <h1>Rate it!</h1>
-                        </div>
+                            <Stars
+                                onStarClicked={handleMovieRated}
+                                rating={rating}
+                            />
+                        </ModalRatingContainer>
                     </ModalRightContent>
                 </ModalContent>
             </ModalContainer>
