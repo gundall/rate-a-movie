@@ -27,7 +27,7 @@ const ModalContainer = styled.div`
     flex-direction: column;
     height: 70vh;
     overflow: hidden;
-    padding: 15px;
+    padding: 10px;
     width: 90vw;
 
     @media screen and (min-width: 477px) {
@@ -67,6 +67,8 @@ const ModalClose = styled.button`
 const ModalContent = styled.div`
     display: block;
     overflow-y: auto;
+    margin: 0 15px;
+    margin-bottom: 15px;
 
     @media screen and (min-width: 477px) {
         flex: 1;
@@ -91,7 +93,11 @@ const ModalImage = styled.img`
 			`
 	}
 `;
-const ModalDataList = styled.div``;
+const ModalDataList = styled.div`
+    div {
+        margin-bottom: 5px;
+    }
+`;
 
 const ModalRightContent = styled.div`
     display: flex;
@@ -107,11 +113,13 @@ const ModalRightContent = styled.div`
 `;
 
 const ModalRatingContainer = styled.div`
+    align-items: center;
     display: flex;
     flex-direction: column;
 
     h2 {
         font-family: Edo !important;
+        margin-bottom: 5px;
     }
 `;
 
