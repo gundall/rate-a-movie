@@ -35,8 +35,8 @@ const Stars = (props) => {
 	while (StarsList.length < MAX_RATING) {
 		const   starValue = StarsList.length + 1,
                 key = starValue + Date.now();
-        debugger;
-        StarsList.push(
+
+                StarsList.push(
 			<Star
 				active={StarsList.length < newRating}
 				key={key}
