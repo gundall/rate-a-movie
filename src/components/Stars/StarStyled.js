@@ -3,7 +3,10 @@ import starIcon from '../../assets/star.svg';
 import starFilledIcon from '../../assets/star_filled.svg';
 
 const CONTAINER_HEIGHT = 40;
-const STAR_SIZE = CONTAINER_HEIGHT;
+const STAR_SIZES = {
+    default: CONTAINER_HEIGHT / 1.2,
+    desktop: CONTAINER_HEIGHT
+};
 
 const StarsContainer = styled.div`
     align-items: center;
@@ -21,8 +24,14 @@ const Star = styled.span`
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: ${props => props.size ? props.size : STAR_SIZE}px;
-    width: ${props => props.size ? props.size : STAR_SIZE}px;
+    height: ${STAR_SIZES.default}px;
+    margin: 0 5px;
+    width: ${STAR_SIZES.default}px;
+
+    @media screen and (min-width: 477px) {
+        height: ${STAR_SIZES.desktop}px;
+        width: ${STAR_SIZES.desktop}px;
+    }
 `;
 
 export {
