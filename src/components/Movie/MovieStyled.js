@@ -22,6 +22,7 @@ const MainContainer = styled.div`
 	border-radius: 3px;
 	bottom: 0;
 	box-shadow: #666 0px 0px 12px 1px;
+	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
