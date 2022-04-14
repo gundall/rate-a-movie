@@ -14,7 +14,7 @@ import SearchInput from '../SearchInput/SearchInput';
 
 const Logo = ({ children }) => {
 	return (
-		<LogoHeader>
+		<LogoHeader className="logo">
 			{children}
 		</LogoHeader>
 	);

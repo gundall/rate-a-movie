@@ -25,6 +25,9 @@ const TopBarContainer = styled.div`
 `;
 
 const LogoHeader = styled.h1`
+    &.logo {
+        font-family: Edo;
+    }
     padding: 0 10px;
 
     @media screen and (min-width: 477px) {
