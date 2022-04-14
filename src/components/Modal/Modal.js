@@ -16,7 +16,7 @@ import Stars from '../Stars/Stars';
 const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;
 
 const Modal = (props) => {
-    const {data, onModalClose, onMovieRated} = props;
+    const {data, onModalClose, onMovieRated, readOnly} = props;
     const {original_language, original_title, overview, poster_path, rating, release_date, title} = data;
     const 	useDefaultImage = !poster_path || poster_path === null || poster_path === '',
 			imageUrl = useDefaultImage
@@ -92,10 +92,16 @@ const Modal = (props) => {
                     
                         {/* Rating Form */}
                         <ModalRatingContainer>
-                            <h1>Rate it!</h1>
+                            <h1>
+                                {readOnly
+                                    ? 'You rated'
+                                    : 'Rate it!'
+                                }:
+                            </h1>
                             <Stars
                                 onStarClicked={handleMovieRated}
                                 rating={rating}
+                                readOnly={readOnly}
                             />
                         </ModalRatingContainer>
                     </ModalRightContent>
