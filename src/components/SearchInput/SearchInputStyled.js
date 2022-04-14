@@ -29,6 +29,7 @@ const SearchContainer = styled.div`
 const Input = styled.input`
     border: none;
     border-radius: 20px;
+    font-weight: 900;
     outline: none;
 `;
 const Magnifier = styled.button`
