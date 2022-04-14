@@ -11,10 +11,12 @@ import './index.css';
 import App from './App';
 import Movies from './search/Movies';
 import MyList from './myList/MyList';
+import GlobalFonts from './assets/fonts/fonts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<Provider store={store}>
+		<GlobalFonts />
 		<BrowserRouter>
 			<Routes>
 				<Route path="*" element={<App />}>

@@ -7,6 +7,10 @@ const AppContainer = styled.div`
 	height: 100vh;
 	justify-content: flex-start;
 	overflow: hidden;
+
+	* {
+		font-family: Quicksand;
+	}
 `;
 
 export {
