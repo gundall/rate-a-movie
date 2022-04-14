@@ -1,38 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styled from 'styled-components';
-
-const NavContainer = styled.nav`
-	justify-content: center;
-	display: flex;
-	flex: 3;
-	flex-direction: row;
-
-	a {
-		align-items: center;
-		display: flex;
-		flex-direction: row;
-		padding: 10px;
-		text-decoration: none;
-
-		&:hover {
-			background-color: #eee;
-		}
-		&:active {
-			color: initial;
-		}
-	}
-`;
+import { NavLink } from "react-router-dom";
+import {
+	NavContainer
+} from './MenuStyled';
 
 const Menu = () => {
 	return (
 		<NavContainer>
-			<Link to="/search">
+			<NavLink to="/search" style={({ isActive }) => {
+				return isActive
+					? {
+						backgroundColor: '#000',
+						color: '#fff'
+					}
+					: {};
+			}}>
 				Search
-			</Link>
-			<Link to="/myList">
+			</NavLink>
+			<NavLink to="/myList" style={({ isActive }) => {
+				return isActive
+					? {
+						backgroundColor: '#000',
+						color: '#fff'
+					}
+					: {};
+			}}>
 				My List
-			</Link>
+			</NavLink>
 		</NavContainer>
 	);
 };
