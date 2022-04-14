@@ -15,11 +15,14 @@ const Input = styled.input`
 `;
 
 const Search = (props) => {
-    const {onSubmit} = props;
+    const {onSearch, onSubmit} = props;
     return (
         <SearchContainer>
             <form onSubmit={onSubmit}>
-                <Input type="search" />
+                <Input
+                    type="search"
+                    onChange={onSearch}
+                />
                 <button>
                     <span role="img" aria-label="search">🔎</span>
                 </button>

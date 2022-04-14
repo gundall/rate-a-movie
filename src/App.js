@@ -8,6 +8,7 @@ import Menu from './components/Menu/Menu';
 import SearchInput from './components/SearchInput/SearchInput';
 
 import { getMoviesByTitle } from './redux/moviesSearch';
+import { setLastSearch } from './redux/search';
 
 const AppContainer = styled.div`
 	align-items: stretch;
@@ -39,11 +40,27 @@ const Logo = ({ children }) => {
 function App() {
 	const dispatch = useDispatch();
 
-	const handleSearch = (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
+
 		const 	input = e.target.querySelector('input[type="search"]'),
 				value = input.value;
+
+		// Actualizamos la búsuqeda.
+		dispatch(setLastSearch(value));
+
+		// Hacemos la llamada al thunk para que actualice
+		// asíncronamente el estado global.
 		(value && value !== '') && dispatch(getMoviesByTitle(value));
+	}
+
+	const handleSearch = (e) => {
+		e.preventDefault();
+
+		const value = e.target.value;
+
+		// Actualizamos la búsuqeda.
+		dispatch(setLastSearch(value));
 	}
 
 	return (
@@ -52,7 +69,10 @@ function App() {
 			<TopBar>
 				<Logo>Rate-a-movie</Logo>
 				<Menu />
-				<SearchInput onSubmit={handleSearch}/>
+				<SearchInput
+					onSubmit={handleSubmit}
+					onSearch={handleSearch}
+				/>
 			</TopBar>
 
 			{/* CONTENIDO PROVISTO POR EL ROUTER */}
