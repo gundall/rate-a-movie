@@ -17,14 +17,14 @@ const MyList = () => {
         <RatedList>
             {rated.length > 0
                 ? rated.map((movie) => {
-                    const   {id, poster_path, title} = movie,
+                    const   {id, poster_path, rating, title} = movie,
                             salt = Date.now();
                     return (
                         <Movie
                             id={id}
                             image={poster_path}
                             key={id + salt}
-                            rating={3}
+                            rating={rating}
                             title={title}
                         />
                     )

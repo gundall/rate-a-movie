@@ -9,7 +9,7 @@ const MoviesList = (props) => {
     const { movies, onMovieClick } = props;
 
     const List = movies.map((movie) => {
-		const   {id, poster_path, title} = movie,
+		const   {id, poster_path, rating, title} = movie,
                 salt = Date.now();
 		return (
 			<Movie
@@ -17,6 +17,7 @@ const MoviesList = (props) => {
 				image={poster_path}
 				key={id + salt}
                 onMovieClick={onMovieClick}
+				rating={rating}
 				title={title}
 			/>
 		)

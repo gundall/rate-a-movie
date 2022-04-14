@@ -55,19 +55,19 @@ const Movies = () => {
 	}, []);
 
 	return (
-		<div>
+		<>
 			<MoviesList
 				movies={movies}
 				onMovieClick={handleMovieClick}
-				onMovieRated={handleMovieRated}
 			/>
 			{modalShown &&
 				<Modal
 					data={modalData}
 					onModalClose={handleModalClose}
+					onMovieRated={handleMovieRated}
 				/>
 			}
-		</div>
+		</>
 	)
 }
 
