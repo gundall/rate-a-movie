@@ -9,7 +9,7 @@ const MoviesList = (props) => {
     const { movies, onMovieClick } = props;
 
     const List = movies.map((movie) => {
-		const   {id, poster_path, rating, title} = movie,
+		const   {id, poster_path, /* rating, */ title} = movie,
                 salt = Date.now();
 		return (
 			<Movie
