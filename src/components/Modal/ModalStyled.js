@@ -70,8 +70,11 @@ const ModalImage = styled.div`
 const ModalDataList = styled.div``;
 
 const ModalRightContent = styled.div`
+    display: flex;
+    flex-direction: column;
     grid-row: 1;
     grid-column: 2;
+    justify-content: space-between;
 `;
 
 export {

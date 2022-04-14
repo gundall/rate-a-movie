@@ -16,7 +16,7 @@ const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;
 
 const Modal = (props) => {
     const {data, onModalClose, onMovieRated} = props;
-    const {original_language, overview, poster_path, rating, release_date, title} = data;
+    const {original_language, original_title, overview, poster_path, rating, release_date, title} = data;
     const 	useDefaultImage = !poster_path || poster_path === null || poster_path === '',
 			imageUrl = useDefaultImage
 				? DEFAULT_MOVIE_POSTER
@@ -52,12 +52,18 @@ const Modal = (props) => {
                     <ModalRightContent>
                         {/* Data */}
                         <ModalDataList>
-                            {title &&
+                            <h1>
+                                {title && title !== ""
+                                    ? title
+                                    : 'Untitled'
+                                }
+                            </h1>
+                            {original_title &&
                                 <div>
-                                    <b>Title</b>: <span>{title}</span>
+                                    <b>Original Title</b>: <span>{original_title}</span>
                                 </div>
                             }
-                            {title &&
+                            {release_date &&
                                 <div>
                                     <b>Release date</b>: <span>{release_date}</span>
                                 </div>
