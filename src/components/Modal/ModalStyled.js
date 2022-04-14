@@ -1,6 +1,12 @@
 import styled, {
     css
 } from 'styled-components';
+import closeImg from '../../assets/close.png';
+
+const HEADER_SIZES = {
+    default: 40,
+    desktop: 60
+}
 
 const ModalWrapper = styled.div`
     align-items: center;
@@ -16,9 +22,11 @@ const ModalWrapper = styled.div`
 `;
 const ModalContainer = styled.div`
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    height: 70vh;
+    overflow: hidden;
     padding: 15px;
     width: 90vw;
 
@@ -31,33 +39,49 @@ const ModalHeader = styled.div`
     align-items: stretch;
     display: flex;
     justify-content: flex-end;
-    height: 40px;
+    height: ${HEADER_SIZES.default}px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 477px) {
+        height: ${HEADER_SIZES.desktop}px;
+    }
 `;
 const ModalClose = styled.button`
     background-color: inherit;
+    background-image: url(${closeImg});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     border: none;
     cursor: pointer;
+    height: ${HEADER_SIZES.default / 2}px;
     user-select: none;
+    width: ${HEADER_SIZES.default / 2}px;
+
+    @media screen and (min-width: 477px) {
+        height: ${HEADER_SIZES.desktop / 2}px;
+        width: ${HEADER_SIZES.desktop / 2}px;
+    }
 `;
 
 const ModalContent = styled.div`
-    display: grid;
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    flex: 1;
+    display: block;
+    overflow-y: auto;
+
+    @media screen and (min-width: 477px) {
+        flex: 1;
+    }
 `;
 const ModalLeftContent = styled.div`
     display: flex;
-    grid-column: 1;
-    grid-row: 1;
+
+    @media screen and (min-width: 477px) {
+    }
 `;
-const ModalImage = styled.div`
-    background-image: url(${props => props.src});
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	flex: 1;
+
+const ModalImage = styled.img`
+    max-width: 100%;
+    max-height: 100%;
 
 	${props =>
 		props.default &&
@@ -72,14 +96,23 @@ const ModalDataList = styled.div``;
 const ModalRightContent = styled.div`
     display: flex;
     flex-direction: column;
-    grid-row: 1;
-    grid-column: 2;
-    justify-content: space-between;
+    grid-row: 2;
+    grid-column: 1;
+
+    @media screen and (min-width: 477px) {
+        grid-column: 1;
+        grid-row: 2;
+        justify-content: space-between;
+    }
 `;
 
 const ModalRatingContainer = styled.div`
     display: flex;
     flex-direction: column;
+
+    h2 {
+        font-family: Edo !important;
+    }
 `;
 
 export {

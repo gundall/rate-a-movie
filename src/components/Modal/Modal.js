@@ -46,7 +46,7 @@ const Modal = (props) => {
             <ModalContainer>
                 {/* HEADER */}
                 <ModalHeader>
-                    <ModalClose onClick={handleModalClose}>X</ModalClose>
+                    <ModalClose onClick={handleModalClose} />
                 </ModalHeader>
 
                 {/* CONTENT */}
@@ -62,12 +62,12 @@ const Modal = (props) => {
                     <ModalRightContent>
                         {/* Data */}
                         <ModalDataList>
-                            <h1>
+                            <h2>
                                 {title && title !== ""
                                     ? title
                                     : 'Untitled'
                                 }
-                            </h1>
+                            </h2>
                             {original_title &&
                                 <div>
                                     <b>Original Title</b>: <span>{original_title}</span>
@@ -80,7 +80,7 @@ const Modal = (props) => {
                             }
                             {original_language &&
                                 <div>
-                                    <b>Language</b>: <span>{original_language}</span>
+                                    <b>Language</b>: <span>{original_language.toUpperCase()}</span>
                                 </div>
                             }
                             {overview &&
@@ -92,12 +92,12 @@ const Modal = (props) => {
                     
                         {/* Rating Form */}
                         <ModalRatingContainer>
-                            <h1>
+                            <h2>
                                 {readOnly
                                     ? 'You rated'
                                     : 'Rate it!'
                                 }:
-                            </h1>
+                            </h2>
                             <Stars
                                 onStarClicked={handleMovieRated}
                                 rating={rating}
