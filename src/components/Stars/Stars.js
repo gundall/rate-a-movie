@@ -10,6 +10,7 @@ const MAX_RATING = process.env.REACT_APP_MAX_RATING;
 
 const Stars = (props) => {
 	const { onStarClicked, rating, readOnly, starSize } = props;
+    const [originalRating, setOriginalRating] = useState(rating);
     const [newRating, setNewRating] = useState(rating);
     const [isReadOnly] = useState(readOnly);
     
@@ -18,14 +19,15 @@ const Stars = (props) => {
     };
 
     const handleStarHoverOut = () => {
-        !isReadOnly && setNewRating(rating);
+        !isReadOnly && setNewRating(originalRating);
     }
 
     const handleStarClicked = (starRating) => {
         if (isReadOnly) return;
-        console.log(starRating);
+
         onStarClicked(starRating);
         setNewRating(starRating);
+        setOriginalRating(starRating);
     };
 
     const StarsList = [];
@@ -33,7 +35,7 @@ const Stars = (props) => {
 	while (StarsList.length < MAX_RATING) {
 		const   starValue = StarsList.length + 1,
                 key = starValue + Date.now();
-
+        debugger;
         StarsList.push(
 			<Star
 				active={StarsList.length < newRating}
