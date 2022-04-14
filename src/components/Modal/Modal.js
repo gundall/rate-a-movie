@@ -24,15 +24,23 @@ const Modal = (props) => {
 
     console.log(data);
 
-    const handleModalClose = () => {
+    const handleModalClose = (e) => {
         onModalClose();
+    }
+    const handleOusideModalClick = (e) => {
+        const target = e.target;
+        /modal-backdrop/.test(target.id)
+            && onModalClose();
     }
     const handleMovieRated = (rating = 3) => {
         onMovieRated(rating);
     }
 
     return (
-        <ModalWrapper>
+        <ModalWrapper
+            id="modal-backdrop"
+            onClick={handleOusideModalClick}
+        >
             <ModalContainer>
                 {/* HEADER */}
                 <ModalHeader>
