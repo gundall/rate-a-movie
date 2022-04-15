@@ -1,5 +1,5 @@
 import React from "react";
-import { LogoHeader } from "../Logo/LogoStyled";
+import { LogoHeader } from "../../themes/bn/LogoStyled";
 
 const Logo = () => {
 	return (

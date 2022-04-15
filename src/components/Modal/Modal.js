@@ -10,7 +10,7 @@ import {
     ModalRatingContainer,
     ModalRightContent,
     ModalWrapper
-} from './ModalStyled';
+} from '../../themes/bn/ModalStyled';
 import Stars from '../Stars/Stars';
 
 const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;

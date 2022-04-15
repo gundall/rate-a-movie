@@ -4,7 +4,7 @@ import React, {
 import Star from './Star';
 import {
     StarsContainer
-} from './StarStyled';
+} from '../../themes/bn/StarStyled';
 
 const MAX_RATING = process.env.REACT_APP_MAX_RATING;
 

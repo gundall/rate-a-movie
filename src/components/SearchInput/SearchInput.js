@@ -5,7 +5,7 @@ import {
     Magnifier,
     SearchContainer,
     SearchForm
-} from './SearchInputStyled';
+} from '../../themes/bn/SearchInputStyled';
 
 const Search = (props) => {
     const {onSearch, onSubmit} = props;

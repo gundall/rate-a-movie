@@ -9,7 +9,7 @@ const MENU_BUTTON_SIZES = {
 
 const TOPBAR_SIZES = {
     default: 75,
-    desktop: 120
+    desktop: 90
 }
 
 const TopBarContainer = styled.div`

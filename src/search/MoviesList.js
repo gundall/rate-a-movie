@@ -1,7 +1,7 @@
 import React from "react";
 import {
 	ListContainer
-} from './MoviesListStyled';
+} from '../themes/bn/MoviesListStyled';
 
 import Movie from '../components/Movie/Movie';
 

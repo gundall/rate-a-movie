@@ -21,6 +21,16 @@ const LogoHeader = styled.div`
         margin: 0;
         margin-left: 30px;
     }
+	@media screen and (min-width: 477px) and (max-width: 540px) {
+	}
+	@media screen and (min-width: 540px) and (max-width: 768px) {
+	}
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+	}
+	@media screen and (min-width: 1024px) and (max-width: 1600px) {
+	}
+	@media screen and (min-width: 1600px) {
+	}
 `;
 
 export {

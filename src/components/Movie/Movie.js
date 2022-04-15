@@ -6,7 +6,7 @@ import {
     MainContainer,
 	MainWrapper,
     Title
-} from './MovieStyled';
+} from '../../themes/bn/MovieStyled';
 import Stars from '../Stars/Stars';
 
 const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;

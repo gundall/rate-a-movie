@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import {
     RatedList
-} from "./MyListStyled";
+} from "../themes/bn/MyListStyled";
 
 import Movie from '../components/Movie/Movie';
 import Modal from '../components/Modal/Modal';

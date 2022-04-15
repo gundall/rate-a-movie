@@ -7,7 +7,7 @@ import {
     ToggleMenu,
     TopBarContainer,
     TopBarMobile
-} from './TopBarStyled';
+} from '../../themes/bn/TopBarStyled';
 import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';
 import SearchInput from '../SearchInput/SearchInput';

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
 	NavContainer
-} from './MenuStyled';
+} from '../../themes/bn/MenuStyled';
 
 const Menu = () => {
 	return (

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Star } from './StarStyled';
+import { Star } from '../../themes/bn/StarStyled';
 
 const StarComponent = (props) => {
 	const {active, onHover, onHoverOut, onClick, size, value} = props;

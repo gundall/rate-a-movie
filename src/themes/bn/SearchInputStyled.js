@@ -39,6 +39,7 @@ const Magnifier = styled.button`
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
     height: ${INPUT_SIZES.default}px;
     width: ${INPUT_SIZES.default}px;
 `;
