@@ -11,7 +11,7 @@ import { addRated } from '../redux/ratedMovies';
 
 import MoviesList from "./MoviesList";
 import Modal from '../components/Modal/Modal';
-import EmptyList from "../EmptyList/EmptyList";
+import EmptyList from "../emptyList/EmptyList";
 
 const Movies = () => {
 	const [modalShown, setModalShown] = useState(false);

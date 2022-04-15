@@ -9,7 +9,7 @@ import {
 
 import Movie from '../components/Movie/Movie';
 import Modal from '../components/Modal/Modal';
-import EmptyList from "../EmptyList/EmptyList";
+import EmptyList from "../emptyList/EmptyList";
 
 const MyList = () => {
     const [modalShown, setModalShown] = useState(false);
