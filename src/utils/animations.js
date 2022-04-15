@@ -59,6 +59,34 @@ const beat = (target, factor, time, repeats, callback) => {
     });
 };
 
+const beatOut = (target, factor, time, repeats, callback) => {
+    if (!checkValidTarget(target))
+        return;
+
+    const finalTime = time && typeof time === "number" ? time : 0.1;
+    const finalFactor = factor && typeof factor === "number" ? factor : 0.8;
+    const finalRepeats = repeats && typeof repeats === "number" ? repeats : 1;
+    const finalCallback = callback && typeof callback === "function" ? callback : () => {};
+
+    gsap.to(target, {
+        duration: finalTime,
+        onComplete: (target) => {
+            gsap.to(target, {
+                duration: finalTime,
+                onCompleteParams: [target],
+                onComplete: finalCallback,
+                repeat: finalRepeats,
+                scale: 1,
+                yoyo: true
+            });
+        },
+        onCompleteParams: [target],
+        repeat: finalRepeats,
+        scale: finalFactor,
+        yoyo: true
+    });
+};
+
 const fadeIn = (target, data = {}) => {
     if (!checkValidTarget(target))
         return;
@@ -255,6 +283,9 @@ const tumble = (target, time, repeat, callback) => {
 
 export {
     beat,
+    beatOut,
+    fadeIn,
+    fadeOut,
     shake,
     tumble
 };
