@@ -30,17 +30,12 @@ function App() {
 
 		// Hacemos la llamada al thunk para que actualice
 		// asíncronamente el estado global.
-		(value && value !== '') && dispatch(getMoviesByTitle(value));
+		(value && value !== '') 
+			? dispatch(getMoviesByTitle(value))
+			: dispatch(getTopRatedMovies());
 	};
 
-	const handleSearch = (e) => {
-		e.preventDefault();
-
-		const value = e.target.value;
-
-		// Hacemos la búsqueda por defecto.
-		value === "" && dispatch(getTopRatedMovies());
-	};
+	const handleSearch = (e) => {};
 
 	const handleResize = () => {
 		setIsMobile(window.innerWidth <= MAX_MOBILE_WIDTH);
