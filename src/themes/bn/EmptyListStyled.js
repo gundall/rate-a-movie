@@ -16,12 +16,9 @@ const NoResultsContainer = styled.div`
     }
 `;
 
-const NoResultsImage = styled.div``;
-
 const NoResultsText = styled.div``;
 
 export {
     NoResultsContainer,
-    NoResultsImage,
     NoResultsText
 };

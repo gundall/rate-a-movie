@@ -1,7 +1,7 @@
 import React from "react";
+
 import {
     NoResultsContainer,
-    NoResultsImage,
     NoResultsText
 } from '../themes/bn/EmptyListStyled';
 
@@ -10,9 +10,6 @@ const NoResults = (props) => {
 
     return (
         <NoResultsContainer>
-            <NoResultsImage>
-
-            </NoResultsImage>
             <NoResultsText>
                {children}
             </NoResultsText>
