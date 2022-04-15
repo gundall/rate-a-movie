@@ -8,6 +8,10 @@ const StarComponent = (props) => {
 	const {active, onHover, onHoverOut, onClick, readOnly, size, value} = props;
 
 	const handleStarClick = (e) => {
+		if (readOnly) {
+			onClick(value);
+			return;
+		}
 		beat(e.currentTarget, 1.5, 0.08, 1, () => {
 			onClick(value);
 		});
