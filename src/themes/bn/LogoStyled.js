@@ -12,6 +12,7 @@ const LogoHeader = styled.div`
         font-family: Edo;
     }
     h1 {
+        font-size: 1.5em;
         margin-bottom: 5px;
         margin-top: 0.3em;
     }
@@ -25,16 +26,6 @@ const LogoHeader = styled.div`
         margin: 0;
         padding-left: 10px;
     }
-	@media screen and (min-width: 477px) and (max-width: 768px) {
-        h1 {
-            font-size: 1.2em
-        }
-	}
-	@media screen and (min-width: 769px) {
-        h1 {
-            font-size: 1.5em
-        }
-	}
 	@media screen and (min-width: 769px) and (max-width: 1024px) {
         padding-left: 20px;
     }
