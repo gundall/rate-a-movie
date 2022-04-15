@@ -1,12 +1,16 @@
 import React from "react";
 import PropTypes from 'prop-types';
+
+import { beat } from '../../utils/animations';
 import { Star } from '../../themes/bn/StarStyled';
 
 const StarComponent = (props) => {
-	const {active, onHover, onHoverOut, onClick, size, value} = props;
+	const {active, onHover, onHoverOut, onClick, readOnly, size, value} = props;
 
-	const handleStarClick = () => {
-		onClick(value);
+	const handleStarClick = (e) => {
+		beat(e.currentTarget, 1.5, 0.08, 1, () => {
+			onClick(value);
+		});
 	};
 	const handleMouseEnter = () => {
 		onHover(value);
@@ -17,10 +21,12 @@ const StarComponent = (props) => {
 
 	return (
 		<Star
+			className={active ? 'active' : ''}
 			filled={active}
 			onClick={handleStarClick}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
+			readOnly={readOnly}
 			size={size}
 		/>
 	);

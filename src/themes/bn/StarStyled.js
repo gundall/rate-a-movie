@@ -13,7 +13,10 @@ const StarsContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    min-height: ${CONTAINER_HEIGHT};
+    min-height: ${CONTAINER_HEIGHT}px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    overflow: visible;
 `;
 
 const Star = styled.span`
@@ -24,6 +27,7 @@ const Star = styled.span`
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: ${props => props.readOnly ? 'default' : 'pointer'};
     height: ${props => props.size ? props.size : STAR_SIZES.default}px;
     padding: 0 5px;
     width: ${props => props.size ? props.size : STAR_SIZES.default}px;
