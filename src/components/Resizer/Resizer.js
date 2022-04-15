@@ -16,6 +16,7 @@ const Resizer = (props) => {
     });
 
     useEffect(() => {
+        // Aplicamos un debound para evitar re-renders contínuos.
         const handleResizeDebound = debouncer(function handleResize() {
             onResize();
             setDimensions({

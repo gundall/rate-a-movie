@@ -1,10 +1,10 @@
 function debouncer(fn, msCustom) {
     const ms = msCustom ? msCustom : 1000;
-    let temporizador;
+    let temp;
     return () => {
-        clearTimeout(temporizador);
-        temporizador = setTimeout(() => {
-            temporizador = null;
+        clearTimeout(temp);
+        temp = setTimeout(() => {
+            temp = null;
             fn.apply(this, arguments);
         }, ms);
     };
