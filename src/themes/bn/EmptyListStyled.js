@@ -5,6 +5,7 @@ const NoResultsContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 30px 0;
 
     h2 {
         font-family: Edo !important;
