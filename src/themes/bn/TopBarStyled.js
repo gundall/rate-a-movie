@@ -55,6 +55,8 @@ const MenuMobile = styled.div`
     flex-direction: column;
     position: absolute;
     top: 0;
+    right: 100vw;
+    width: 75vw;
     z-index: 2;
 `;
 const ToggleMenu = styled.button`

@@ -1,6 +1,10 @@
 import React, {
-    useState
+    useEffect,
+    useRef,
+    useState,
 } from "react";
+import { gsap } from 'gsap';
+
 import {
     MenuMobile,
     MenuMobileWrapper,
@@ -16,13 +20,30 @@ const TopBar = (props) => {
     const { logo, mobile, onSubmit, onSearch, search } = props;
     const [menuOpened, setMenuOpened] = useState(false);
 
+    const menuRef = useRef();
+
     const toggleMenu = () => {
         setMenuOpened(!menuOpened);
     };
     const handleOutClick = (e) => {
-        e.target.id === "menu-backdrop"
-            && setMenuOpened(!menuOpened);
+        if (e.target.id === "menu-backdrop") {
+            gsap.to(menuRef.current, {
+                duration: 0.2,
+                onComplete: setMenuOpened,
+                onCompleteParams: [!menuOpened],
+                x: 0
+            });
+        }
     }
+
+    useEffect(() => {
+        if (menuOpened) {
+            gsap.to(menuRef.current, {
+                duration: 0.2,
+                x: menuRef.current.offsetWidth
+            });
+        }
+    }, [menuOpened]);
 
     if (mobile) {
         return (
@@ -34,7 +55,7 @@ const TopBar = (props) => {
                             id="menu-backdrop"
                             onClick={handleOutClick}
                         >
-                            <MenuMobile>
+                            <MenuMobile ref={menuRef}>
                                 {logo &&
                                     <Logo />
                                 }
