@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import magnifierImg from '../../assets/magnifier.png';
+import crossImg from '../../assets/close.png';
 
 const INPUT_SIZES = {
     default: 25,
@@ -36,6 +37,16 @@ const Input = styled.input`
     font-weight: 900;
     outline: none;
     width: 100%;
+
+    &::-webkit-search-cancel-button {
+        background: url(${crossImg}) no-repeat 50% 50%;
+        background-size: contain;
+        border-radius: 50em;
+        cursor: pointer;
+        height: 0.9em;
+        width: 0.9em;
+        -webkit-appearance: none;
+    }
 `;
 const Magnifier = styled.button`
     border: none;
