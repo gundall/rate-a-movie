@@ -11,6 +11,7 @@ import { addRated } from '../redux/ratedMovies';
 
 import MoviesList from "./MoviesList";
 import Modal from '../components/Modal/Modal';
+import EmptyList from "../EmptyList/EmptyList";
 
 const Movies = () => {
 	const [modalShown, setModalShown] = useState(false);
@@ -56,20 +57,31 @@ const Movies = () => {
 		lastSearch === "" && dispatch(getTopRatedMovies());
 	}, []);
 
-	return (
-		<>
-			<MoviesList
-				movies={movies}
-				onMovieClick={handleMovieClick}
-			/>
-			{modalShown &&
-				<Modal
-					data={modalData}
-					onModalClose={handleModalClose}
-					onMovieRated={handleMovieRated}
+	return (movies.length === 0
+		? 	<EmptyList>
+				<h2>
+					{lastSearch !== ''
+						? 'No movies found.'
+						: 'No movies available.'
+					}
+				</h2>					
+				{lastSearch !== '' &&
+					<p>Try another search, or maybe try to use the original name of the movie.</p>
+				}
+			</EmptyList>
+		:	<>	
+				<MoviesList
+					movies={movies}
+					onMovieClick={handleMovieClick}
 				/>
-			}
-		</>
+				{modalShown &&
+					<Modal
+						data={modalData}
+						onModalClose={handleModalClose}
+						onMovieRated={handleMovieRated}
+					/>
+				}
+			</>
 	)
 }
 

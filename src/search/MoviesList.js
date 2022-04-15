@@ -25,10 +25,7 @@ const MoviesList = (props) => {
 
 	return (
 		<ListContainer>
-			{List.length > 0 
-				? List
-				: <h2>No movies available.</h2>
-			}
+			{List}
 		</ListContainer>
 	);
 };

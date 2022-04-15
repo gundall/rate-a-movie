@@ -9,6 +9,7 @@ import {
 
 import Movie from '../components/Movie/Movie';
 import Modal from '../components/Modal/Modal';
+import EmptyList from "../EmptyList/EmptyList";
 
 const MyList = () => {
     const [modalShown, setModalShown] = useState(false);
@@ -28,35 +29,37 @@ const MyList = () => {
 		setModalShown(false);
 	}
 
-    return (
-        <>
-            <RatedList>
-                {rated.length > 0
-                    ? rated.map((movie) => {
-                        const   {id, poster_path, rating, title} = movie,
-                                salt = Date.now();
-                        return (
-                            <Movie
-                                id={id}
-                                image={poster_path}
-                                key={id + salt}
-                                onMovieClick={handleMovieClick}
-                                rating={rating}
-                                title={title}
-                            />
-                        )
-                    })
-                    : <h1>Nihil novum sub sole</h1>
+    return (rated.length === 0
+        ?   <EmptyList>
+                <h2>{'You haven\'t rated any movies yet'}</h2>
+                <p>{'Go to the "Search", search movies, and rate every movie you want.'}</p>
+            </EmptyList>
+        :   <>
+                <RatedList>
+                    {rated.map((movie) => {
+                            const   {id, poster_path, rating, title} = movie,
+                                    salt = Date.now();
+                            return (
+                                <Movie
+                                    id={id}
+                                    image={poster_path}
+                                    key={id + salt}
+                                    onMovieClick={handleMovieClick}
+                                    rating={rating}
+                                    title={title}
+                                />
+                            )
+                        })
+                    }
+                </RatedList>
+                {modalShown &&
+                    <Modal
+                        data={modalData}
+                        onModalClose={handleModalClose}
+                        readOnly={true}
+                    />
                 }
-            </RatedList>
-            {modalShown &&
-                <Modal
-                    data={modalData}
-                    onModalClose={handleModalClose}
-                    readOnly={true}
-                />
-            }
-        </>
+            </>
     );
 };
 
