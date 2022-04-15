@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import {
     DataContainer,
     Image,
@@ -8,6 +9,9 @@ import {
     Title
 } from '../../themes/bn/MovieStyled';
 import Stars from '../Stars/Stars';
+import {
+	shake
+} from '../../utils/animations';
 
 const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;
 
@@ -24,10 +28,14 @@ const Movie = (props) => {
 		e.preventDefault();
 		onMovieClick(id);
 	};
+	const handleMovieHover = (e) => {
+		shake(e.currentTarget);
+	};
 
 	return (
 		<MainWrapper
 			onClick={handleMovieClick}
+			onMouseEnter={handleMovieHover}
 		>
 			<MainContainer>
 				<Image
