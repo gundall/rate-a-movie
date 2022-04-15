@@ -8,6 +8,10 @@ const INPUT_SIZES = {
 const SearchForm = styled.form`
     align-items: center;
     display: flex;
+
+    @media screen and (min-width: 477px) {
+	   flex: 1;
+	}
 `;
 const SearchContainer = styled.div`
     align-items: center;
@@ -31,6 +35,7 @@ const Input = styled.input`
     border-radius: 20px;
     font-weight: 900;
     outline: none;
+    width: 100%;
 `;
 const Magnifier = styled.button`
     border: none;

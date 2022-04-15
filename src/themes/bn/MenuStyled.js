@@ -27,13 +27,26 @@ const NavContainer = styled.nav`
 
 	@media screen and (min-width: 477px) {
 		justify-content: center;
-		flex: 3;
+		flex: 1;
 		flex-direction: row;
 
 		a {
 			justify-content: center;
+			min-width: 80px;
+		}
+	}
+	@media screen and (min-width: 540px) and (max-width: 768px) {
+		a {
+			min-width: 90px;
+		}
+	}
+	@media screen and (min-width: 768px) and (max-width: 1600px) {
+		a {
 			min-width: 120px;
 		}
+	}
+	@media screen and (min-width: 1024px) {
+		flex: 2;
 	}
 `;
 
