@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+	useState
+} from 'react';
 import { useDispatch } from 'react-redux';
 import {
 	getMoviesByTitle,
@@ -8,12 +10,14 @@ import { setLastSearch } from './redux/search';
 import { Outlet } from "react-router-dom";
 
 import TopBar from './components/TopBar/TopBar';
+import Resizer from './components/Resizer/Resizer';
 import { AppContainer } from './AppStyled';
 
-const isMobile = window.screen.availWidth <= 476;
+const MAX_MOBILE_WIDTH = 476;
 
 function App() {
 	const dispatch = useDispatch();
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= MAX_MOBILE_WIDTH);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -27,7 +31,7 @@ function App() {
 		// Hacemos la llamada al thunk para que actualice
 		// asíncronamente el estado global.
 		(value && value !== '') && dispatch(getMoviesByTitle(value));
-	}
+	};
 
 	const handleSearch = (e) => {
 		e.preventDefault();
@@ -39,19 +43,28 @@ function App() {
 
 		// Hacemos la búsqueda por defecto.
 		value === "" && dispatch(getTopRatedMovies());
-	}
+	};
+
+	const handleResize = () => {
+		setIsMobile(window.innerWidth <= MAX_MOBILE_WIDTH);
+	};
 
 	return (
 		<AppContainer>
-			{/* TOPBAR */}
-			<TopBar
-				onSubmit={handleSubmit}
-				onSearch={handleSearch}
-				mobile={isMobile}
-			/>
+			<Resizer
+				ms={10}
+				onResize={handleResize}
+			>
+				{/* TOPBAR */}
+				<TopBar
+					onSubmit={handleSubmit}
+					onSearch={handleSearch}
+					mobile={isMobile}
+				/>
 
-			{/* CONTENIDO PROVISTO POR EL ROUTER */}
-			<Outlet />
+				{/* CONTENIDO PROVISTO POR EL ROUTER */}
+				<Outlet />
+			</Resizer>
 		</AppContainer>
 	);
 }
