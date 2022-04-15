@@ -1,12 +1,13 @@
 import React from "react";
 import {
-	ListContainer
+	ListContainer,
+	ListHeader
 } from '../themes/bn/MoviesListStyled';
 
 import Movie from '../components/Movie/Movie';
 
 const MoviesList = (props) => {
-    const { movies, onMovieClick } = props;
+    const { movies, onMovieClick, title } = props;
 
     const List = movies.map((movie) => {
 		const   {id, poster_path, /* rating, */ title} = movie,
@@ -24,9 +25,14 @@ const MoviesList = (props) => {
 	});
 
 	return (
-		<ListContainer>
-			{List}
-		</ListContainer>
+		<>
+			<ListHeader>
+				{title}
+			</ListHeader>
+			<ListContainer>
+				{List}
+			</ListContainer>
+		</>
 	);
 };
 

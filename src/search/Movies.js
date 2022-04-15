@@ -22,6 +22,8 @@ const Movies = () => {
 	const lastSearch = useSelector((state) => state.search.value);
 	const dispatch = useDispatch();
 
+	const useDefaultSearch = lastSearch === '';
+
 	const getMovieFromId = (id) => {
 		const movie = movies.filter((movie) => movie.id === id);
 		return movie.length > 0 ? movie[0] : null;
@@ -54,25 +56,29 @@ const Movies = () => {
 
 	// Cargamos las mejor valoradas para la primera carga.
 	useEffect(() => {
-		lastSearch === "" && dispatch(getTopRatedMovies());
+		useDefaultSearch && dispatch(getTopRatedMovies());
 	}, []);
 
 	return (movies.length === 0
 		? 	<EmptyList>
 				<h2>
-					{lastSearch !== ''
+					{!useDefaultSearch
 						? 'No movies found.'
 						: 'No movies available.'
 					}
 				</h2>					
-				{lastSearch !== '' &&
+				{!useDefaultSearch &&
 					<p>Try another search, or maybe try to use the original name of the movie.</p>
 				}
 			</EmptyList>
-		:	<>	
+		:	<>
 				<MoviesList
 					movies={movies}
 					onMovieClick={handleMovieClick}
+					title={!useDefaultSearch
+						? `Results for your search "${lastSearch}".`
+						: "All-time top rated movies."
+					}
 				/>
 				{modalShown &&
 					<Modal

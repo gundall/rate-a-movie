@@ -28,6 +28,12 @@ const ListContainer = styled.div`
 	}
 `;
 
+const ListHeader = styled.h2`
+	font-family: Edo !important;
+	text-align: center;
+`;
+
 export {
-    ListContainer
+    ListContainer,
+	ListHeader
 };
