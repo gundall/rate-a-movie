@@ -1,22 +1,21 @@
 import styled from "styled-components";
 
 const NoResultsContainer = styled.div`
-    align-items: center;
+    align-items: stretch;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    justify-content: flex-start;
     padding: 30px 0;
 
     h2 {
         font-family: Edo !important;
     }
-
-    @media screen and (min-width: 477px) {
-        flex-direction: row;
-    }
 `;
 
-const NoResultsText = styled.div``;
+const NoResultsText = styled.div`
+    text-align: center;
+`;
 
 export {
     NoResultsContainer,

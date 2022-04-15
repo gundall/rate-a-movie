@@ -4,6 +4,7 @@ import {
     NoResultsContainer,
     NoResultsText
 } from '../themes/bn/EmptyListStyled';
+import NoResultsAnimation from "../components/NoResultsAnimation/NoResultsAnimation";
 
 const NoResults = (props) => {
     const { children } = props;
@@ -13,6 +14,7 @@ const NoResults = (props) => {
             <NoResultsText>
                {children}
             </NoResultsText>
+            <NoResultsAnimation />
         </NoResultsContainer>
     );
 };
