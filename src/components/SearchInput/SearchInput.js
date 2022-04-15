@@ -1,5 +1,7 @@
 import React from "react";
 
+import { beatOut } from '../../utils/animations';
+
 import {
     Input,
     Magnifier,
@@ -9,6 +11,11 @@ import {
 
 const Search = (props) => {
     const {onSearch, onSubmit} = props;
+
+    const handleMagnifierClick = (e) => {
+        beatOut(e.currentTarget);
+    };
+
     return (
         <SearchForm onSubmit={onSubmit}>
             <SearchContainer onSubmit={onSubmit}>
@@ -16,7 +23,7 @@ const Search = (props) => {
                         type="search"
                         onChange={onSearch}
                     />
-                    <Magnifier />
+                    <Magnifier onClick={handleMagnifierClick}/>
             </SearchContainer>
         </SearchForm>
     );
