@@ -15,10 +15,6 @@ const NoResultsContainer = styled.div`
     }
 `;
 
-const SearchInfo = styled.div`
-
-`;
-
 const NoResultsImage = styled.div``;
 
 const NoResultsText = styled.div``;
@@ -26,6 +22,5 @@ const NoResultsText = styled.div``;
 export {
     NoResultsContainer,
     NoResultsImage,
-    NoResultsText,
-    SearchInfo
+    NoResultsText
 };

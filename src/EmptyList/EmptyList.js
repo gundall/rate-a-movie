@@ -2,12 +2,11 @@ import React from "react";
 import {
     NoResultsContainer,
     NoResultsImage,
-    NoResultsText,
-    SearchInfo
-} from '../themes/bn/NoResultsStyled';
+    NoResultsText
+} from '../themes/bn/EmptyListStyled';
 
 const NoResults = (props) => {
-    const { fromSearch } = props;
+    const { children } = props;
 
     return (
         <NoResultsContainer>
@@ -15,13 +14,7 @@ const NoResults = (props) => {
 
             </NoResultsImage>
             <NoResultsText>
-                <h2>No movies available.</h2>
-                {
-                    fromSearch &&
-                    <SearchInfo>
-                        
-                    </SearchInfo>
-                }
+               {children}
             </NoResultsText>
         </NoResultsContainer>
     );
