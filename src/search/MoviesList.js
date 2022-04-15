@@ -27,7 +27,7 @@ const MoviesList = (props) => {
 	return (
 		<>
 			<ListHeader>
-				{title}
+				<h2>{title}</h2>
 			</ListHeader>
 			<ListContainer>
 				{List}

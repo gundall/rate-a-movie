@@ -18,8 +18,10 @@ const TopBarContainer = styled.div`
 	flex-direction: row;
     height: ${TOPBAR_SIZES.default}px;
 	justify-content: space-between;
+    z-index: 2;
 
     @media screen and (min-width: 477px) {
+        box-shadow: #888 0px 3px 6px 3px;
         height: ${TOPBAR_SIZES.desktop}px;
     }
 `;
@@ -27,11 +29,13 @@ const TopBarContainer = styled.div`
 // MOBILE
 const TopBarMobile = styled.div`
     align-items: center;
-    box-shadow: #fff 0px 4px 2px 2px;
+    background-color: ${TOPBAR_BG_COLOR};
+    box-shadow: #888 0px 2px 8px 3px;
 	display: flex;
 	flex-direction: row;
     height: ${TOPBAR_SIZES.default}px;
     justify-content: flex-start;
+    z-index: 2;
 
     @media screen and (min-width: 477px) {
         height: ${TOPBAR_SIZES.desktop}px;

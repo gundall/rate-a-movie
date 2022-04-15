@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+const ListHeader = styled.div`
+	box-shadow: #888 0px 2px 6px 3px;
+	background-color: #ddd;
+	text-align: center;
+	z-index: 1;
+	
+	h2 {
+		font-family: Edo !important;
+	}
+`;
+
 const ListContainer = styled.div`
     display: block;
 	overflow-y: auto;
@@ -26,11 +37,6 @@ const ListContainer = styled.div`
 	@media screen and (min-width: 1600px) {
 		grid-template-columns: repeat(6, 1fr);
 	}
-`;
-
-const ListHeader = styled.h2`
-	font-family: Edo !important;
-	text-align: center;
 `;
 
 export {
