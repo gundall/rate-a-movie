@@ -32,6 +32,20 @@ const ModalContainer = styled.div`
 
     @media screen and (min-width: 477px) {
         height: 80vh;
+        width: 80vw;
+    }
+    @media screen and (min-width: 477px) {
+    }
+	@media screen and (min-width: 477px) and (max-width: 768px) {
+	}
+	@media screen and (min-width: 769px) {
+	}
+	@media screen and (min-width: 769px) and (max-width: 1024px) {
+    }
+	@media screen and (min-width: 1024px) and (max-width: 1400px) {
+        width: 75vw;
+    }
+    @media screen and (min-width: 1400px) {
         width: 60vw;
     }
 `;
@@ -70,13 +84,13 @@ const ModalContent = styled.div`
     margin: 0 15px;
     margin-bottom: 15px;
 
-    @media screen and (min-width: 477px) {
+    @media screen and (min-width: 768px) {
         display: flex;
         flex: 1;
     }
 `;
 const ModalLeftContent = styled.div`
-    display: flex;
+    display: block;
 
     @media screen and (min-width: 477px) {
         flex: 1;
@@ -98,6 +112,14 @@ const ModalImage = styled.img`
 const ModalDataList = styled.div`
     div {
         margin-bottom: 5px;
+    }
+
+    @media screen and (min-width: 769px) {
+        margin: 0 20px;
+        
+        h2 {
+            margin-top: 0;
+        }
     }
 `;
 
