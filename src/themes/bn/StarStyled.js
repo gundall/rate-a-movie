@@ -31,6 +31,13 @@ const Star = styled.span`
     cursor: ${props => props.readOnly ? 'default' : 'pointer'};
     height: ${props => props.size ? props.size : STAR_SIZES.default}px;
     padding: 0 5px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     width: ${props => props.size ? props.size : STAR_SIZES.default}px;
 
     @media screen and (min-width: 477px) {
