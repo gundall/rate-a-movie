@@ -62,10 +62,7 @@ const Image = styled.div`
 
 	${props =>
 		props.default &&
-			css`
-				filter: blur(1px) brightness(1.5);
-				opacity: .8;
-			`
+			css``
 	}
 `;
 const Title = styled.span`

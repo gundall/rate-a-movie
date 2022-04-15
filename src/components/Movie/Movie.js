@@ -12,15 +12,15 @@ import Stars from '../Stars/Stars';
 import {
 	shake
 } from '../../utils/animations';
+import defaultPoster from '../../assets/ticket.jpg';
 
-const DEFAULT_MOVIE_POSTER = process.env.REACT_APP_DEFAULT_MOVIE_POSTER;
 
 const Movie = (props) => {
 	const {id, image, onMovieClick, rating, title} = props;
 
 	const 	useDefaultImage = !image || image === null || image === '',
 			imageUrl = useDefaultImage
-				? DEFAULT_MOVIE_POSTER
+				? defaultPoster
 				: `${process.env.REACT_APP_MOVIES_POSTER_BASE_URL}${image}`; // Viene con '/' delante
 
 	// Handlers.
