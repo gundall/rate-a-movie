@@ -32,7 +32,7 @@ const MyList = () => {
     return (rated.length === 0
         ?   <EmptyList>
                 <h2>{'You haven\'t rated any movies yet'}</h2>
-                <p>{'Go to the "Search", search movies, and rate every movie you want.'}</p>
+                <p>{'Go to the "Search" section, search movies, and rate every movie you want.'}</p>
             </EmptyList>
         :   <>
                 <RatedList>
