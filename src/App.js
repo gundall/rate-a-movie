@@ -38,9 +38,6 @@ function App() {
 
 		const value = e.target.value;
 
-		// Actualizamos la búsuqeda.
-		dispatch(setLastSearch(value));
-
 		// Hacemos la búsqueda por defecto.
 		value === "" && dispatch(getTopRatedMovies());
 	};
