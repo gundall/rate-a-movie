@@ -3,8 +3,8 @@ import styled from "styled-components";
 const NoResultsContainer = styled.div`
     align-items: stretch;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    height: 100%;
     justify-content: flex-start;
     padding: 30px 0;
 
