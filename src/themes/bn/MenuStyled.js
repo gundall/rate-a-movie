@@ -7,6 +7,7 @@ const NavContainer = styled.nav`
 
 	a {
 		align-items: center;
+		color: inherit;
 		display: flex;
 		flex-direction: row;
 		padding: 10px;
@@ -21,7 +22,7 @@ const NavContainer = styled.nav`
 		}
 		&:active,
         &:visited {
-			color: initial;
+			color: inherit;
 		}
 	}
 
