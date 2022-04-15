@@ -28,6 +28,7 @@ const ModalContainer = styled.div`
     height: 70vh;
     overflow: hidden;
     padding: 10px;
+    position: relative;
     width: 90vw;
 
     @media screen and (min-width: 477px) {
@@ -87,6 +88,7 @@ const ModalContent = styled.div`
     @media screen and (min-width: 768px) {
         display: flex;
         flex: 1;
+        overflow: hidden;
     }
 `;
 const ModalLeftContent = styled.div`
