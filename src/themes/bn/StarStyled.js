@@ -11,6 +11,7 @@ const STAR_SIZES = {
 const StarsContainer = styled.div`
     align-items: center;
     display: flex;
+    filter: grayscale(0.5) contrast(1.2);
     flex-direction: row;
     justify-content: flex-start;
     min-height: ${CONTAINER_HEIGHT}px;
